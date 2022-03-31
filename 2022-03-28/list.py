@@ -6,7 +6,9 @@
 string = input()
 str_list = string.split()
 s = 0
-for i in str_list:
-    s += int(i)
-print(s)
+print(str_list)
+
+# for i in str_list:
+#     s += int(i)
+# print(s)
 
