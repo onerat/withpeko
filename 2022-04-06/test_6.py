@@ -1,23 +1,3 @@
-# dictionary 선언법
-
-# key와 value로 선언한다.
-from collections import defaultdict
-from email.policy import default
-
-
-dic = {'key': 'value'}
-dic = dict({'key': 'vlaue'})
-print(dic['key'])
-# 유효하지 않는 key는 에러를 발생시킨다.
-# print(dic['peko'])
-
-i_like = {'apple': 'yes', 'pair': 'no', 'orange': 'yes'}
-
-# 모든키를 알고 싶을 경우에는 아래와 같이 출력 가능하다.
-print(i_like.keys())
-print(i_like[3])
-
-
 # 문제
 
 # peko는 나쁜사람이다. peko는 포켓몬 빵 사재기를 하려고 한다.
@@ -40,6 +20,25 @@ print(i_like[3])
 
 # output
 # 고스트빵: 4개 가지고 있습니다.
-# 피카츄빵: 2개 가지고 있습니다.
-# 파이리빵: 1개 가지고 있습니다.
 # 로켓단빵: 3개 가지고 있습니다.
+# 파이리빵: 1개 가지고 있습니다.
+# 피카츄빵: 2개 가지고 있습니다.
+
+
+n = int(input())
+pockemon = {}
+
+for i in range(n):
+    while True:
+        poketmon_name, num = input().split()
+        if poketmon_name == '없음': 
+            break
+        elif poketmon_name in pockemon:
+            pockemon[poketmon_name] += int(num)
+        else:
+            pockemon[poketmon_name] = int(num)
+
+keys = sorted(pockemon.keys())
+for key in keys:
+    print(f"{key}: {pockemon[key]}")
+
